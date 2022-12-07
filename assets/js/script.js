@@ -1,3 +1,8 @@
+// TODO: Add code to display the current date in the header of the page.
+var dateToday = $('#currentDay');
+var now = dayjs();
+dateToday.text('Today is: ' + now.format('MMM D, YYYY'));
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -10,7 +15,9 @@ $(document).ready(function () {
   // useful when saving the description in local storage?
 
   $('.saveBtn').on('click', function () {
-
+    var event = $(this).siblings('.description').val();
+    var eventTime = $(this).parent().attr('id');
+    localStorage.setItem(eventTime, event);
   })
 
   //
@@ -19,10 +26,30 @@ $(document).ready(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-  //
+  var colorChange = function () {
+    var currentHr = dayjs().hour();
+    var blockHr = parseInt($(this).attr('id'));
+    var timeBlocks = $('#time-block');
+    for (var i = 0; i < timeBlocks.length; i++) {
+      if (blockHr[i] > currentHr) {
+        $(this).removeClass('past');
+        $(this).removeClass('present');
+        $(this).addClass('future');
+      } else if (blockHr[i] === currentHr) {
+        $(this).removeClass('future');
+        $(this).removeClass('past');
+        $(this).addClass('present');
+      } else {
+        $(this).removeClass('future');
+        $(this).removeClass('present');
+        $(this).addClass('past');
+      }
+    }
+  }
+
+
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
 });
