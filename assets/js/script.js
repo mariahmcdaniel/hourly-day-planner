@@ -54,16 +54,19 @@ $(document).ready(function () {
     header.removeClass('blue');
     header.removeClass('text-white');
     header.addClass('pink');
+    header.children('#greet').text('- Good Morning -');
   } else if (currentHr >= 11 && currentHr < 18) {
     header.removeClass('pink');
     header.removeClass('blue');
     header.removeClass('text-white');
     header.addClass('green');
+    header.children('#greet').text('- Good Afternoon -');
   } else {
     header.removeClass('green');
     header.removeClass('pink');
     header.addClass('blue');
     header.addClass('text-white');
+    header.children('#greet').text('- Good Evening -');
   }
 
 });

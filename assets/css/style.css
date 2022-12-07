@@ -24,6 +24,12 @@ textarea {
   padding: 10px;
 }
 
+#greet {
+  padding-top: 10px;
+  font-size: 25px;
+  font-style: italic;
+}
+
 .description {
   white-space: pre-wrap;
 }
