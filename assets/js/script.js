@@ -47,5 +47,24 @@ $(document).ready(function () {
   $("#16 .description").val(localStorage.getItem("16"));
   $("#17 .description").val(localStorage.getItem("17"));
 
+  // change header color depending on current time
+  var header = $('header');
+  if (currentHr < 11) {
+    header.removeClass('green');
+    header.removeClass('blue');
+    header.removeClass('text-white');
+    header.addClass('pink');
+  } else if (currentHr >= 11 && currentHr < 18) {
+    header.removeClass('pink');
+    header.removeClass('blue');
+    header.removeClass('text-white');
+    header.addClass('green');
+  } else {
+    header.removeClass('green');
+    header.removeClass('pink');
+    header.addClass('blue');
+    header.addClass('text-white');
+  }
+
 });
 

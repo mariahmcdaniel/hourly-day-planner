@@ -3,6 +3,18 @@ body {
   font-size: 16px;
 }
 
+.pink {
+  background-color: #FFD3CC;
+}
+
+.green {
+  background-color: #D1F395;
+}
+
+.blue {
+  background-color: #25308F;
+}
+
 textarea {
   background: transparent;
   border: none;
