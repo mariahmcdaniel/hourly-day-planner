@@ -49,13 +49,13 @@ $(document).ready(function () {
 
   // change header color depending on current time
   var header = $('header');
-  if (currentHr < 11) {
+  if (currentHr < 12) {
     header.removeClass('green');
     header.removeClass('blue');
     header.removeClass('text-white');
     header.addClass('pink');
     header.children('#greet').text('- Good Morning -');
-  } else if (currentHr >= 11 && currentHr < 18) {
+  } else if (currentHr >= 12 && currentHr < 18) {
     header.removeClass('pink');
     header.removeClass('blue');
     header.removeClass('text-white');
