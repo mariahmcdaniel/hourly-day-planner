@@ -19,6 +19,10 @@ Day planner evening view:
 
 ![preview of planner app](./assets/images/planner.png)
 
+Morning view:
+
+![morning preview](./assets/images/morning.png)
+
 Save button:
 
 ![savebtn](./assets/images/save.png)
